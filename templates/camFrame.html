@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Camera Stream</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            height: 100vh;
+            background-color: #777777ea;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        #cameraContainer {
+            position: relative;
+            width: 640px;
+            height: 480px;
+            border: 2px solid #000000;
+            background: #777777ea;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #outButton {
+            position: absolute;
+            bottom: -70px; 
+            left: 50%; 
+            transform: translateX(-50%);
+            padding: 20px 40px;
+            font-size: 16px;
+            background-color: #1900ff;
+            color: white; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        #outButton:hover {
+            background-color: #45a049;
+        }
+        #ipInputContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        #ipInput {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        #submitIpButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        #submitIpButton:hover {
+            background-color: #45a049;
+        }
+        #result {
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        #disease-result {
+            font-weight: bold;
+            font-size: 20px;
+            color: #f80a0a;
+        }
+    </style>
+</head>
+<body>
+    <h1>IP Camera Stream</h1>
+
+    <div id="ipInputContainer">
+        <input type="text" id="ipInput" placeholder="Enter IP Address">
+        <button id="submitIpButton">Submit</button>
+    </div>
+    <div id="result">
+        <p id="disease-result">Hastalığı tespit etmek için IP adresi giriniz.</p>
+    </div>
+    <div id="cameraContainer">
+        <img id="cameraStream" width="640" height="480" alt="MJPEG Stream">
+        <button id="outButton">OUT</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='cameraStream.js') }}"></script>
+</body>
+</html>
