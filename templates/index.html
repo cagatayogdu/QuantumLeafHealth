@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proje Web Sitesi</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+        header .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        header .logo-container img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        header .logo-container .site-title {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        header nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        #home {
+            background: url("{{ url_for('static', filename='images/background2.jpg') }}");
+            background-size: cover;  
+            background-position: center;
+            color: rgb(9, 9, 9);
+            height: 100vh;  
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        #about {
+            padding: 50px 20px;
+            text-align: center;
+            background: linear-gradient(135deg,  #f8f5ed,#a5a58d); 
+        }
+
+        .about-header h2 {
+            font-size: 2.5rem;
+            color: #333; 
+    }
+
+        .about-header p {
+            font-size: 1.2rem;
+            color: #666; 
+            margin-bottom: 40px;
+        }
+
+        .features-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .feature-card {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .feature-card img {
+            width: 60px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        #upload {
+            background: #333;
+            padding: 50px;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            color: #fff; 
+            text-align: center;
+        }
+        .upload-text{
+            height: 200px;
+            color: #fff; 
+            text-align: center;
+        }
+        #whowe{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 98vh; 
+            background: url("{{ url_for('static', filename='images/aa.jpg') }}");; 
+            color: #333; 
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #whowe .container {
+            text-align: center;
+            max-width: 800px; 
+        }
+
+        #whowe h2 {
+            font-size: 2.5rem; 
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        #whowe p {
+            font-size: 1.2rem; 
+            line-height: 1.8;
+            color: #555;
+        }
+        .team{
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .team-member{
+            text-align: center;
+        }
+        .team-member img{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #333;
+            margin-top: 10px;
+        }
+        .team-member p{
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .button-container .upload {
+            background-color: #4caf50;
+            color: white;
+            opacity: 0.5; 
+        }
+        .button-container .capture {
+            background-color: #2196f3;
+            color: white;
+            opacity: 0.5; 
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .link {
+            font-size: 1.1rem;
+            color: #ffffff;
+            position: absolute;
+            right: 190px ;   
+        }
+        .link2 {
+            font-size: 1.1rem;
+            color: #ffffff;
+            position: absolute;
+            right: 100px ;   
+        }
+        .link3 {
+            font-size: 1.1rem;
+            color: #ffffff;
+            position: absolute;
+            right: 330px ;   
+        }
+
+        .link4 {
+            font-size: 1.1rem;
+            color: #ffffff;
+            position: absolute;
+            right: 250px ;   
+        }
+        .link5 {
+            font-size: 1.1rem;
+            color: #ffffff;
+            position: absolute;
+            right: 60px ;   
+        }
+        .button-container .upload:active,
+        .button-container .capture:active {
+            transform: scale(0.95); 
+        }
+        .button-container .upload:hover,
+        .button-container .capture:hover {
+            transform: scale(1.1);
+            background-color: #c18ce9;
+            opacity: 1; 
+        }
+        .button-container .upload {
+            background-color: #7ff68d; 
+            color: white;
+        }
+        .button-container .capture {
+            background-color: #7ff68d; 
+            color: white;
+        }
+        .button-container button {
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+
+        .button-container .upload:focus,
+        .button-container .capture:focus {
+            transform: scale(1.05); 
+        }
+        .rectangle-frame{
+            width: 1800px; 
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e2e2e1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);    
+        }
+        
+        .rectangle-frame p{
+            margin: 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .rectangle-frame img{
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: cover;
+            transform: translateX(-50px);
+            border-radius: 10%;
+        }
+        .frame-text{
+            width: 1800px; 
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #e2e2e1;
+        }
+        .frame-text p{
+            margin: 0;
+            font-size: 1.2rem;
+            color: #000000;
+        }
+        .frame-image{
+            width: 1800px; 
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e2e2e1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);    
+        }
+        .frame-image .content{
+            max-width: 50%;
+        }
+        .frame-image h2{
+            color:  #007500;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        #upload {
+            background: linear-gradient(135deg, #f8f5ed, #bf7343); 
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; 
+            color: #fff; 
+            text-align: center;
+        }
+        #upload .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        #upload .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+        }
+        #upload h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .button-container {
+            display: flex;
+            gap: 30px;
+        }
+        .button-container button {
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 12px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+        }
+        .button-container .upload {
+            background-color: #fa8d85; 
+            color: #fff;
+            opacity: 1;
+        }
+        .button-container .capture {
+            background-color: #008cba; 
+            color: #fff;
+            opacity: 1;
+        }
+        .button-container button:hover {
+            transform: scale(1.1); 
+            background-color: #ff9800; 
+        }
+        .button-container button:active {
+            transform: scale(0.95); 
+        }
+        #scrollTopButton {
+            display: none; 
+            position: fixed;
+            bottom: 20px; 
+            right: 20px; 
+            z-index: 1000; 
+            background-color: #d9f6de; 
+            color: rgb(0, 0, 0);
+            border: none;
+            outline: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 30%; 
+            text-align: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s; 
+        }
+
+        #scrollTopButton:hover {
+            background-color: #69d27e; 
+        }
+    </style>
+    </head>
+        <body>
+        <header>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Site Logosu">
+            <div class="site-title">AgriQDetect</div>
+        </div>
+    
+        <nav>
+            <a href="#home" class="link3">Anasayfa | </a>
+            <a href="#about" class="link4">Farkımız | </a>
+            <a href="#upload" class="link">Başla | </a>
+            <a href="#whowe" class="link2">Biz Kimiz? | </a>
+            <a href="blog" class="link5">Blog</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1></h1>
+        <div class="rectangle-frame">
+            <img src="{{ url_for('static', filename='images/frame.jpg') }}" alt="frame fotosu" >   
+        </div>
+        <div class="frame-text">
+            <h2>KUANTUM TABANLI YAPAY ZEKA İLE BİTKİ HASTALIĞI</h2>
+            <p>Hazırlamış olduğumuz kuantum bilgisayarlı akıllı hastalık tespit sistemi ile birlikte 
+                bitkilerimizde oluşan hastalıkları IP kameradan alınan görüntü üzerinden tespit edebilirsiniz.
+             Akıllı ve sürekli öğrenebilen yapısı ile birlikte sürekli öğrenir ve size en doğru cevabı verir.</p>
+          </div>
+    </section>
+    <section id="about">
+        <div class="about-header">
+            <h2>Özelliklerimiz</h2>
+            <p>Bizi farklı kılan ve öne çıkaran özelliklerimize göz atın.</p>
+        </div>
+        <div class="features-container">
+            <div class="feature-card">
+                <img src="{{ url_for('static', filename='images/database.png') }}" alt="Bulut Tabanlı">
+                <h3>Bulut Tabanlı</h3>
+                <p>Bulut tabanlı sistem sayesinde uygulamamıza 7/24 her yerden erişebilir ve analiz yapabilirsiniz.</p>
+            </div>
+            <div class="feature-card">
+                <img src="{{ url_for('static', filename='images/rocket.png') }}" alt="Yüksek Hızlı">
+                <h3>Yüksek Hızlı</h3>
+                <p>Alınan tüm veriler kuantum model ile birlikte hızlı bir şekilde raporlanıp kullanıcıya gönderilir.</p>
+            </div>
+            <div class="feature-card">
+                <img src="{{ url_for('static', filename='images/webcam.png') }}" alt="Anında Sonuç">
+                <h3>Anında Sonuç</h3>
+                <p>Görüntü işleme ve yapay zeka sayesinde anında detaylı raporlama ve tanı.</p>
+            </div>
+            <div class="feature-card">
+                <img src="{{ url_for('static', filename='images/user.png') }}" alt="Kullanıcı Dostu">
+                <h3>Kullanıcı Dostu</h3>
+                <p>Farklı tipte ürünlerin hem hastalıklarını hem de gelişimlerini takip edin.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="upload">
+        <div class="header">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Site Logosu" class="logo" />
+            <h2>Bir Yerden Başlayalım</h2>
+        </div>
+        <div class="button-container">
+            <button class="upload" onclick="navigateTo('/photoFrame')">Fotoğraf Yükle</button>
+            <button class="capture" onclick="navigateTo('/camFrame')">Gerçek Zamanlı Tespit</button>
+        </div>
+    </section>
+
+    <section id="whowe">    
+        <div class="container">
+            <h2>Bizi Tanıyın</h2>
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='images/c.jpg') }}" alt="frame fotosu" >
+                <p>Buraya isminizi yazın</p> 
+            </div>
+           
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='images/e.jpg') }}" alt="frame fotosu" >
+                <p>buraya isminizi yazın</p>
+            </div>
+            <p>
+                2Qubit takımı olarak, tarımsal üretimde verimliliği artırmak ve
+                bitki sağlığını korumak için yenilikçi çözümler sunuyoruz. 
+                Uzman ekibimiz, tarım teknolojilerini daha erişilebilir hale getirmek için çalışmaktadır.
+            </p>
+        </div>
+    
+    <section> 
+        <button class="blog" onclick="navigateTo('/blog')"></button>
+    </section>
+    </section>
+    <button id="scrollTopButton" title="Yukarı Çık">🡹</button>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+
+</html>
