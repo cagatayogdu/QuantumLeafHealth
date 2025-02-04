@@ -46,16 +46,12 @@ class Net(nn.Module):
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
 
-        x_1, x_2, x_3, x_4 = torch.split(x, 5, dim=1)
+        x_1, x_2 = torch.split(x, 2, dim=1)
 
         x_1 = self.qlayer1(x_1)
         x_2 = self.qlayer2(x_2)
-        x_3 = self.qlayer3(x_3)
-        x_4 = self.qlayer4(x_4)
 
-        x = torch.cat([x_1, x_2, x_3, x_4], axis=1)
+        x = torch.cat([x_1, x_2], axis=1)
 
         x = self.fc3(x)
         return x
-
-
