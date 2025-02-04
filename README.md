@@ -40,12 +40,13 @@ This project uses real-time images from an IP Webcam to detect plant diseases, t
 ## Project Structure
 ```
 QuantumLeafHealth/
-│── app.py              # Flask-based server
-│── model/             # Quantum and classical learning models
-│── static/             # Web interface static files
-│── templates/          # HTML templates
-│── requirements.txt    # Dependency list
-│── README.md           # Project description
+│── app.py                          # Flask-based server
+│── model/                          # Quantum and classical learning models
+│── static/                         # Web interface static files
+│── templates/                      # HTML templates
+│── requirements.txt                # Dependency list
+│── DatasetPreparationCode.ipynb    # Code for data augmentation and creation of general dataset
+│── README.md                       # Project description
 ```
 
 ## Working Principle
