@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitki Blog</title>
+    <style>
+        /* Genel düzen */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background:linear-gradient(135deg, #f8f5ed,#f8f5ed);
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #cb997e, #dca78a);
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+        }
+
+        /* Blog yazısı düzeni */
+        .features-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 2rem;
+        }
+
+        .feature-card {
+            background-color: #b7b7a4;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 350px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            background: #cb997e;
+            color: #6b705c;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            border-radius: 12px;
+        }
+
+        .read-more:hover {
+            transform: scale(1.1);
+            background: #bf7343;
+            border-radius: 12px;
+        }
+        .feature-card {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .blog-info {
+            font-size: 14px;
+            color: #555;
+            margin-top: 10px;
+            margin-bottom: 20px; /* Görselin altı ile yazının üstü arasındaki boşluk */
+        }
+
+        .blog-info .author,
+        .blog-info .date {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .blog-info .author {
+            font-weight: bold;
+        }
+
+        .blog-info .date {
+            color: #888;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Bitki Blog</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Anasayfa</a></li>
+                    <li><a href="#contact">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="features-container">
+            <div class="feature-card">
+                <img src="{{ url_for('static', filename='images/domates-leke.jpg') }}" alt="Domates Hastalıkları">
+               
+                <div class="blog-info">
+                    <span class="author">Yazar: John Doe</span>
+                    <span class="date">Tarih: 2 Ocak 2025</span>
+                </div>
+        
+                <h2>Domates Hastalıkları</h2>
+                <p class="excerpt">Domates hastalıkları bu sebzenin gelişimini büyük oranda etkiler...</p>
+                <p class="full-text" style="display: none;">Domates hastalıkları sadece ürünleri tehdit etmez, aynı zamanda sağlıklı ürünlere bağlı olan çiftçiler için de büyük bir tehdit oluşturur...</p>
+                <button class="read-more">Devamını Oku</button>
+            </div>
+        
+        
+            <div class="feature-card">
+                    <img src="{{ url_for('static', filename='images/mozaik_virus.jpg') }}" alt="Domates Mozaik Virüsü">
+             
+                    <div class="blog-info">
+                        <span class="author">Yazar: Umut Yılmaz</span>
+                        <span class="date">Tarih: 15 Haziran 2023</span>
+                    </div>
+
+                <h2>Domates Mozaik Virüsü</h2>
+                <p class="excerpt">Domates Mozaik Virüsü, domates bitkilerinde hızlıca yayılabilen bir virüs türüdür...</p>
+                <p class="full-text">Domates Mozaik Virüsü, bitkilerin büyümesini engeller ve yapraklarda mozaik desenleri oluşturur. Bu virüs, verimi ciddi şekilde düşürebilir ve etkili tedavi yöntemleri gerektirir...</p>
+                <button class="read-more">Devamını Oku</button>
+            </div>
+        
+            <div class="feature-card">
+                <img src="{{ url_for('static', filename='images/domates-leke.jpg') }}" alt="Domates Leke Hastalığı">
+
+                <div class="blog-info">
+                    <span class="author">Yazar: Zeynep Aslan </span>
+                    <span class="date">Tarih: 8 Nisan 2023</span>
+                </div>
+
+                <h2>Domates Leke Hastalığı</h2>
+                <p class="excerpt">Domates lekesi, özellikle nemli hava koşullarında yaygın bir hastalıktır...</p>
+                <p class="full-text">Domates lekesi, bitkilerin yapraklarında kahverengi lekeler bırakır ve zamanla bu lekeler genişler. Bu hastalık, domateslerin sağlığını tehdit eder ve yüksek nem oranlarında hızla yayılarak hasara yol açar...</p>
+                <button class="read-more">Devamını Oku</button>
+            </div>
+        
+            <div class="feature-card">
+                <img src="{{ url_for('static', filename='images/kara-curuk.jpg') }}" alt="Kara Çürüklük">
+                
+                <div class="blog-info">
+                    <span class="author">Yazar: Ahmet Şaşmaz</span>
+                    <span class="date">Tarih: 23 Aralık 2022</span>
+                </div>
+                
+                <h2>Kara Çürüklük</h2>
+                <p class="excerpt">Kara çürüklük, domatesler için önemli bir bakteriyel hastalıktır...</p>
+                <p class="full-text">Bu hastalık, domateslerin çürümesine neden olur ve ürünün satışa sunulmasını engeller. Özellikle su birikintisi olan bölgelerde hızlıca yayılır. Doğru sulama teknikleri ve antibakteriyel tedavi gereklidir...</p>
+                <button class="read-more">Devamını Oku</button>
+            </div>
+        
+            <div class="feature-card">
+                <img src="{{ url_for('static', filename='images/kök-kanser.jpg') }}" alt="Fusarium Yalancı Kök Kanseri">
+
+                <div class="blog-info">
+                    <span class="author">Yazar: Neva Soy</span>
+                    <span class="date">Tarih: 1 Aralık 2022</span>
+                </div>
+
+                <h2>Fusarium Yalancı Kök Kanseri</h2>
+                <p class="excerpt">Fusarium, domateslerde kök ve gövde çürümesine yol açan bir mantar hastalığıdır...</p>
+                <p class="full-text">Fusarium hastalığı, domateslerin köklerinde çürümeye neden olur ve bu da bitkilerin besin alımını engeller. Bu hastalık toprakta uzun süre kalabilir ve etkili bir tedavi süreci gerektirir...</p>
+                <button class="read-more">Devamını Oku</button>
+            </div>
+        </div>
+        
+        </div>
+    </main>
+    <footer id="contact">
+        <p>İletişim: info@bitkidunyasi.com</p>
+    </footer>
+    <script src="{{ url_for('static', filename='blog.js') }}"></script>
+</body>
+</html>
