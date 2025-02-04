@@ -41,7 +41,7 @@ This project uses real-time images from an IP Webcam to detect plant diseases, t
 ```
 QuantumLeafHealth/
 │── app.py              # Flask-based server
-│── models/             # Quantum and classical learning models
+│── model/             # Quantum and classical learning models
 │── static/             # Web interface static files
 │── templates/          # HTML templates
 │── requirements.txt    # Dependency list
