@@ -59,21 +59,29 @@ QuantumLeafHealth/
 The performance of the quantum deep learning model was evaluated using a dataset of plant leaf images. Below are the key metrics and visualizations that summarize the model's performance:
 
 ### Balanced vs. Imbalanced Dataset
-Here, you can compare the effects of a balanced and an imbalanced dataset on model performance.  
-![Imbalanced Dataset]![WhatsApp Image 2025-01-01 at 18 54 14](https://github.com/user-attachments/assets/324cd07a-161f-4f5c-b67e-183731060741)
-![Balanced Dataset] ![WhatsApp Image 2025-01-01 at 19 51 35](https://github.com/user-attachments/assets/9b715240-e16b-4e32-8f7f-afa9f222fe4a)
+Here, you can compare the effects of a balanced and an imbalanced dataset on model performance.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/324cd07a-161f-4f5c-b67e-183731060741" width="800"/>
+  <img src="https://github.com/user-attachments/assets/9b715240-e16b-4e32-8f7f-afa9f222fe4a" width="800"/>
+</p>
 
 ### Training Curve
 The training curve demonstrates the loss and accuracy of the model over time, showing how the model learned during the training process.  
-![Training Curve]![WhatsApp Image 2025-02-04 at 15 01 53](https://github.com/user-attachments/assets/8eca0976-d1b2-432c-95c7-d5f4aec89fcd)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8eca0976-d1b2-432c-95c7-d5f4aec89fcd" width="800"/>
+</p>
 
 ### Confusion Matrix
-The confusion matrix provides a clear picture of the classification performance of the model. It shows the true positive, true negative, false positive, and false negative results.  
-![Confusion Matrix]![indir (1)](https://github.com/user-attachments/assets/174f5a7c-8341-45b8-8491-fb4f6ad27a8f)
+The confusion matrix provides a clear picture of the classification performance of the model. It shows the true positive, true negative, false positive, and false negative results.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/174f5a7c-8341-45b8-8491-fb4f6ad27a8f" width="800"/>
+</p>
 
 ### ROC Curve
 The ROC (Receiver Operating Characteristic) curve shows the trade-off between the true positive rate and false positive rate, providing insight into the model's ability to discriminate between classes.  
-![ROC Curve]![indir](https://github.com/user-attachments/assets/39e23987-b6fd-428f-9fcc-23e3e9098555)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/39e23987-b6fd-428f-9fcc-23e3e9098555" width="800"/>
+</p>
 
 These metrics collectively highlight the effectiveness of the quantum deep learning model in diagnosing plant diseases and provide further insights into areas for improvement.
 
