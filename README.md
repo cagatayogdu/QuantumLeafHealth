@@ -86,6 +86,12 @@ The ROC (Receiver Operating Characteristic) curve shows the trade-off between th
 
 These metrics collectively highlight the effectiveness of the quantum deep learning model in diagnosing plant diseases and provide further insights into areas for improvement.
 
+### Some Images From The Project
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b6ab2bcc-5531-4cb5-94d3-5307310f728f" width="400"/>
+  <img src="https://github.com/user-attachments/assets/edf53421-e4c2-485a-99ad-1f7e3704d77f" width="400"/>
+  <img src="https://github.com/user-attachments/assets/7642e1e6-7ea5-4d9a-9d5f-fbfec95fa5aa" width="400"/>
+</p>
 
 ## Conclusion and Recommendations
 This project demonstrates how quantum computing techniques can be integrated into agricultural disease diagnosis. The process has been accelerated thanks to real-time data processing and ffmpeg integration. In the future, it is planned to integrate lower cost IoT solutions and extend the model to different plant species.
